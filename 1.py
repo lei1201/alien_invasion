@@ -6,3 +6,4 @@
 # _USER_=' ThinkPad E15 '
 
 import time
+import ensurepip
