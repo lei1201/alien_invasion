@@ -7,12 +7,15 @@
 
 import sys
 import pygame
+from settings import Settings
 
 def run_game():
     """用于初始化游戏"""
     #初始化游戏并创建一个屏幕对象
     pygame.init()
-    screen = pygame.display.set_mode((1200,800))
+    ai_settings = Settings()
+    screen = pygame.display.set_mode(
+        (ai_settings.scree_width,ai_settings.scree_hight))
     pygame.display.set_caption("Alien Invasion")
 
     #设置背景色
@@ -27,7 +30,7 @@ def run_game():
                 sys.exit()
 
         #每次循环都会重绘屏幕
-        screen.fill(bg_color)
+        screen.fill(ai_settings.bg_color)
 
         #让最近绘制的屏幕可见
         pygame.display.flip()
