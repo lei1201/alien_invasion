@@ -8,6 +8,7 @@
 import sys
 import pygame
 from settings import Settings
+from ship import Ship
 
 def run_game():
     """用于初始化游戏"""
@@ -18,8 +19,8 @@ def run_game():
         (ai_settings.scree_width,ai_settings.scree_hight))
     pygame.display.set_caption("Alien Invasion")
 
-    #设置背景色
-    bg_color = (230,230,230)
+    #创建一艘飞船
+    ship = Ship(screen)
 
     #开始游戏的主循环
     while True:
@@ -31,8 +32,8 @@ def run_game():
 
         #每次循环都会重绘屏幕
         screen.fill(ai_settings.bg_color)
+        ship.blitme()
 
         #让最近绘制的屏幕可见
         pygame.display.flip()
-
 run_game()
