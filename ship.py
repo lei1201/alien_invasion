@@ -26,6 +26,9 @@ class Ship():
         self.moving_right = False
         self.moving_left = False
 
+        #飞船的设置
+        self.ship_speed_factor = 1.5
+
     def update(self):
         """根据移动标志调整飞船的位置"""
         if self.moving_right:
