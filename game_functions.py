@@ -8,7 +8,7 @@
 import sys
 import pygame
 
-def check_events():
+def check_events(ship):
     """响应键盘和鼠标事件"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
