@@ -31,7 +31,7 @@ class Ship():
         if self.moving_right:
             self.rect.centerx += 1
         if self.moving_left:
-            self.rect.centerx += 1
+            self.rect.centerx -= 1
     def blitme(self):
         """在指定位置绘制飞船"""
         self.screen.blit(self.image,self.rect)
