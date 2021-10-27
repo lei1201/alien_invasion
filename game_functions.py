@@ -14,6 +14,11 @@ def check_events():
         if event.type == pygame.QUIT:
             sys.exit()
 
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                #向右移动飞船
+                ship.rect.centerx += 1
+
 def update_screen(ai_settings,screen,ship):
     """更新屏幕上的图像，并切换到新屏幕"""
     # 每次循环都会重绘屏幕
