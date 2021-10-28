@@ -30,12 +30,15 @@ def run_game():
     #开始游戏的主循环
     while True:
 
-        #监视键盘和鼠标事件
         gf.check_events(ai_settings,screen,ship,bullets)
         ship.update()
         bullets.update()
-        #每次循环都会重绘屏幕
-        #让最近绘制的屏幕可见
+
+        #删除已经消失的子弹
+        for bullet in bullets.copy():
+            if bullet.rect.bottom <= 0:
+                bullets.remove(bullet)
+        print(len(bullets))
         gf.update_screen(ai_settings,screen,ship,bullets)
 
 run_game()
